@@ -1,0 +1,11 @@
+body {
+    margin-top: 15%;
+    background-color: rgba(180, 111, 180, 0.973);
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+form {
+    text-align: center;
+}
