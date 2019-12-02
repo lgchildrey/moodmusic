@@ -1,0 +1,22 @@
+{
+  "name": "moodmusic",
+  "version": "1.0.0",
+  "description": "Moody Music for cool cats",
+  "main": "render.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgchildrey/moodmusic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgchildrey/moodmusic/issues"
+  },
+  "homepage": "https://github.com/lgchildrey/moodmusic#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}

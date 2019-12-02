@@ -1,9 +1,9 @@
 body {
     margin-top: 15%;
-    background-color: rgba(180, 111, 180, 0.973);
+    background-color: #fafa53;
 }
 h1 {
-    color: white;
+    color: black;
     text-align: center;
 }
 form {
