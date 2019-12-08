@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" /> -->
+        <link rel="stylesheet" href="node_modules/bulma/css/bulma.css"/>
+        <link rel="stylesheet" href ="stylesheet.css"/>
+    </head>
+    <body>
+        <div id="sign">
+            <div class="sign-card">
+                <div class="card-title">
+                    <h1>Create an Account</h1>
+                </div>
+                <div class="content">
+                    <form id="sign-form">
+                        <label class="label">Please fill in boxes below:</label>
+                        <br/>
+                        <br/>
+                        <input id="username" type="username" name="username" title="username" placeholder="Username" required autofocus>
+                        <input id="email" type="email" name="email" title="email" placeholder="Email" required>
+                        <input id="password" type="password" name="password" title="password" placeholder="Password" required>
+                        <div class="field">
+                            <div class="control">
+                                <button id="submit" type="submit" class="btn btn-primary">Create</button>
+                                <br/>
+                                <button onclick="check(); return false" id="cancel" type="cancel" class="btn btn-warning">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <p id="message"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script>
+                function check() {
+                    location.href = `../login/index.html`;
+                }
+            </script>
+        </div>
+        <!-- need to store this information in account.json -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
