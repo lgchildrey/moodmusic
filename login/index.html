@@ -3,24 +3,39 @@
     <head>  
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>COMP 426 Final</title>
-        <link rel = "stylesheet" href = "stylesheet.css" />
+        <title>Log In or Sign Up</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" /> -->
+        <link rel="stylesheet" href="node_modules/bulma/css/bulma.css"/>
+        <link rel="stylesheet" href ="stylesheet.css"/>
     </head>
     <body>
-        <h1>CrowdSafe</h1>
-        <script>
-            function check() {
-                //put link to next page here
-            }
-        </script>
-        <form name="login">
-            Username: <input name="username" type="text" />
-            <br />
-            <br />
-            Password: <input name="password" type="text" />
-            <br />
-            <br />
-            <input onclick="check(); return false" type="submit" value="Log In" />
-        </form>
+        <div id="login">
+            <div class="login-card">
+                <div class="card-title">
+                    <h1>Welcome to CrowdSafe</h1>
+                </div>
+                <div class="content">
+                    <form id="login-form">
+                        <input id="email" type="email" name="email" title="email" placeholder="Email" required autofocus>
+                        <input id="password" type="password" name="password" title="password" placeholder="Password" required>
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <p id="message"></p>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="footer">
+                        <p>Don't have an account yet? <a href="../signup/page.html">Sign Up!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

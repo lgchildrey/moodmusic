@@ -1,11 +1,70 @@
-body {
-    margin-top: 15%;
-    background-color: #fafa53;
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(https://storage.googleapis.com/creator-academy-assets/build-a-sustainable-community/build-a-sustainable-community-450-800.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
-h1 {
-    color: black;
-    text-align: center;
+#login .login-card {
+    background: #fff;
+    border-radius: 25px;
+    width: 24rem;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
 }
-form {
+#login .login-card .card-title {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #FFBB7F;
+    padding: 2rem;
+}
+#login .login-card .card-title h1 {
+    color: #fff;
     text-align: center;
+    font-size: 2rem;
+}
+#login .login-card .content {
+    padding: 3rem 2.5rem 5rem;
+}
+#login .login-card #email, #login .login-card #password {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    padding: 0.25rem 0;
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+    transition: all .5s;
+}
+#login .login-card button {
+    cursor: pointer;
+    margin-left: 25%; 
+    font-size: 1.2rem;
+    color: #FFBB7F;
+    border-radius: 4rem;
+    display: block;
+    width: 50%;
+    background: transparent;
+    border: 2px solid #FFBB7F;
+    padding: 0.9rem 0 1.1rem;
+    transition: color .5s, border-color .5s;
+}
+
+#login .login-card button:hover, #login .login-card button:focus {
+    color: white;
+    background: #FFBB7F;
+    border-color: #FFBB7F;
+}
+
+#login .login-card .footer {
+    text-align: right;
+    margin-top: 20%;
+    margin-bottom: -20%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70%;
+}
+#login .login-card a:hover {
+    color: #FFBB7F;
 }
