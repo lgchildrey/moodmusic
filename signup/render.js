@@ -1,29 +1,29 @@
 const handleCreateButtonPress = function(event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    // const $message = $('#message');
-    // $message.html('');
-    async function createUser() {
-      await axios({
-          method: 'POST',
-          url: 'http://localhost:3000/account/create',
-          data: {
-            name: $('#username').val(), 
-            pass: $('#password').val(),
-            data: {
-              email: $('#email').val()
-            }
-          }
-       });
-
-       const result = await axios({
-         method: 'POST',
-         url: 'http://localhost:3000/account/login',
-         data: {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  // const $message = $('#message');
+  // $message.html('');
+  async function createUser() {
+    await axios({
+        method: 'POST',
+        url: 'http://localhost:3000/account/create',
+        data: {
           name: $('#username').val(), 
-          pass: $('#password').val()
-         }
-       });
+          pass: $('#password').val(),
+          data: {
+            email: $('#email').val()
+          }
+        }
+     });
+
+     const result = await axios({
+       method: 'POST',
+       url: 'http://localhost:3000/account/login',
+       data: {
+        name: $('#username').val(), 
+        pass: $('#password').val()
+       }
+     });
 
        localStorage.setItem('jwt', result.data.jwt);
     
@@ -53,19 +53,27 @@ const handleCreateButtonPress = function(event) {
 //           }
 //       });
 //  // }
+<<<<<<< HEAD
 //   }
 //   postToUser();
 }
   createUser();
     // $message.html('<span class="has-text-success">Success! You have an account now.</span>');
     location.href = `../privatepage/`;
+=======
+}
+//postToUser();
+createUser();
+  // $message.html('<span class="has-text-success">Success! You have an account now.</span>');
+  location.href = `../privatepage/`;
+>>>>>>> 541d5a5221164b140397e50cba99fe7dcac40131
 };
 
 const loadIntoDOM = function() {
-  const $root = $('#sign');
-  $root.on('click', '#create', handleCreateButtonPress);
+const $root = $('#sign');
+$root.on('click', '#create', handleCreateButtonPress);
 };
 
 $(function() {
-    loadIntoDOM();
+  loadIntoDOM();
 });
