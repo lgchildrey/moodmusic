@@ -8,7 +8,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
     </head>
     <body>
-        <h1>CrowdSafe</h1>
+        <section class="hero is-warning">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">
+                  CrowdSafe
+                </h1>
+              </div>
+            </div>
+          </section>
+        
         <div id="root">
 
         </div>
@@ -27,21 +36,15 @@
     </style>
   </head>
   <body>
-    <div class="columns">
-    <div class="column" style="height:700px;"> 
+    <div >
+    <div style="height:700px;"> 
       <div id="map"></div>
 
     </div>
-    <div class="column">
-      <div class="buttons">
-          <button id="report" class="button is-danger">Danger</button>
-        </div>
-        <div id="box">
-    
-        </div>
 
-    </div>
+    
   </div>
+  
     <script>
       
     </script>
@@ -53,5 +56,6 @@
 </html>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="module" src="render.js"></script>
+        <script src="../node_modules/axios/dist/axios.js"></script>
     </body>
 </html>
