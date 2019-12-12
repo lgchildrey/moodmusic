@@ -160,7 +160,7 @@ export async function handleReportClick(event){
   }
 export async function placeMarker(latLng, map){
   //console.log(latLng);
-  $('#click').replaceWith('<div id="click"class="has-text-weight-bold"><h1>Click on the marker again to create the alert.</h1></div>')
+  $('#click').replaceWith('<div id="click"><h1 class="has-text-weight-bold">Click on the marker again to create the alert.</h1></div>')
     var marker = new google.maps.Marker({
         position: latLng,
         map: map
@@ -195,7 +195,11 @@ export async function alertType(latLng, map){
       $report.replaceWith(`<div id="box" class="field">
     <div class="control">
       <label class="label">Warning Type</label>
-      <textarea id="alertType" class="textarea" placeholder="Enter Warning Type Here" value=""></textarea>
+      <form>
+      <input type="search" id="alertType" class="textarea" placeholder="Enter Warning Type Here" value=""></input>
+      <p id="output"></p>
+    <ul id="matches"></ul>
+      </form>
       <label class="label">Warning Details</label>
       <textarea id="description" class="textarea" placeholder="Enter Warning Details Here!" value=""></textarea>
       <button id=${lat} value=${lng} class="is-primary post button">Post</button>
@@ -204,6 +208,92 @@ export async function alertType(latLng, map){
   </div>
   `);
 }
+const KEY = 'debounce-terms';
+let init = function(){
+  //document.getElementById('txt-search').addEventListener('input', search);
+  document.getElementById('alertType').addEventListener('input', efficientSearch);
+  
+  let terms = ['dark', 'spooky', 'sidewalk closed', 'closed', 'hazard', 'icy', 'slippery', 
+               'suspicious person', 'overgrown bushes', 'tree down', 'snake', 'B-School Snake', 'construction','treacherous'];
+  localStorage.setItem(KEY, JSON.stringify(terms));
+}
+let search = function(ev){
+  let text = ev.target.value;
+  document.getElementById('output').textContent = `List Matching ${text}`;
+  let ul = document.getElementById('matches');
+  
+  //call an asynchronous search to match what has been typed
+  getList(text)
+  .then((list)=>{
+      ul.innerHTML = '';
+      if( list.length == 0){
+          let li = document.createElement('li');
+          li.textContent = "NO MATCHES";
+          ul.appendChild(li);
+      }else{
+          list.forEach(item=>{
+              let li = document.createElement('li');
+              li.textContent = item;
+              ul.appendChild(li);
+          })
+      }
+  })
+  .catch(err=>console.warn(err));
+}
+let getList = function(txt){
+  return new Promise((resolve, reject)=>{
+      //use setTimeout with random value to show what can happen
+      let r = Math.floor(Math.random()*1000);
+      setTimeout((function(){
+          let t = '^' + this.toString();
+          let pattern = new RegExp(t, 'i'); //starts with t
+          let terms = JSON.parse(localStorage.getItem(KEY));
+          let matches = terms.filter(term => pattern.test(term));
+          console.log('matches', matches);
+          resolve(matches);
+      }).bind(txt), r);
+  })
+}
+let debounce = function(func, wait, immediate) {
+  var timeout;
+  return function() {
+      var context = this, args = arguments;
+      var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+  };
+};
+let efficientSearch = debounce(function(ev){
+  let text = ev.target.value;
+  document.getElementById('output').textContent = `List Matching ${text}`;
+  let ul = document.getElementById('matches');
+  
+  //call an asynchronous search to match what has been typed
+  getList(text)
+  .then((list)=>{
+      ul.innerHTML = '';
+      if( list.length == 0){
+          let li = document.createElement('li');
+          li.textContent = "NO MATCHES";
+          ul.appendChild(li);
+      }else{
+          list.forEach(item=>{
+              let li = document.createElement('li');
+              li.textContent = item;
+              ul.appendChild(li);
+          })
+      }
+  })
+  .catch(err=>console.warn(err));
+}, 300);
+//call the debounced function at most once every 300ms
+ 
+document.addEventListener('DOMContentLoaded', init);
 export async function handleCancelPost(event){
   const $report = $('#box');
   $report.replaceWith('<div id="box"></div>');
