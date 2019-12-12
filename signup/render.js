@@ -28,7 +28,7 @@ const handleCreateButtonPress = function(event) {
        localStorage.setItem('jwt', result.data.jwt);
     
    // createUser();
-//   var key = result.data.jwt;
+//   var key = localStorage.getItem('jwt');
 //   async function getProfile() {
 //       const result1 = await axios({
 //           method: 'GET',
@@ -37,22 +37,25 @@ const handleCreateButtonPress = function(event) {
 //       });
 //       return result1;
 //   }
-//   //async function postToUser() {
+//   async function postToUser() {
 //       let profile = await getProfile();
 //       await axios({
 //           method: 'POST',
-//           url: 'http://localhost:3000/user/person',
+//           url: 'http://localhost:3000/user/details',
 //           headers: { Authorization: `Bearer ${key}`},
 //           data: {
-//               name: profile.data.user.name,
 //               data: {
 //                   email: profile.data.user.data.email,
+//                   city: "",
+//                   person: "",
+//                   number: "",
 //               }
 //           }
 //       });
 //  // }
-  }
-  //postToUser();
+//   }
+//   postToUser();
+}
   createUser();
     // $message.html('<span class="has-text-success">Success! You have an account now.</span>');
     location.href = `../privatepage/`;

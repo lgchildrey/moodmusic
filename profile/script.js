@@ -284,22 +284,22 @@ const loadIntoDOM = function(profile, truth) {
 $(function() {
     var key = localStorage.getItem('jwt');
     var truth = false;
-    try {
-        async function getUserProfile() {
-            const result = await axios({
-                method: 'GET',
-                url: 'http://localhost:3000/user/details',
-                headers: { Authorization: `Bearer ${key}`}
-               });
-            return result;
-        }
-        async function run() {
-            truth = true;
-            let profile = await getUserProfile();
-            loadIntoDOM(profile, truth);
-        }
-        run();
-    } catch(error) {
+    //try {
+    //     async function getUserProfile() {
+    //         const result = await axios({
+    //             method: 'GET',
+    //             url: 'http://localhost:3000/user/details',
+    //             headers: { Authorization: `Bearer ${key}`}
+    //            });
+    //         return result;
+    //     }
+    //     async function run() {
+    //         truth = true;
+    //         let profile = await getUserProfile();
+    //         loadIntoDOM(profile, truth);
+    //     }
+    //     run();
+    // } catch(error) {
         async function getProfile() {
             const result = await axios({
                 method: 'GET',
@@ -314,5 +314,5 @@ $(function() {
             loadIntoDOM(profile, truth);
         }
         run();
-    }
+   // }
 });
