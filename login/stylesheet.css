@@ -1,12 +1,28 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.background {
+    background-image: url(https://storage.googleapis.com/creator-academy-assets/build-a-sustainable-community/build-a-sustainable-community-450-800.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
+}
 #login {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(https://storage.googleapis.com/creator-academy-assets/build-a-sustainable-community/build-a-sustainable-community-450-800.jpg);
+    /* background-image: url(https://storage.googleapis.com/creator-academy-assets/build-a-sustainable-community/build-a-sustainable-community-450-800.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #login .login-card {
     background: #fff;

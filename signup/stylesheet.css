@@ -1,15 +1,37 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.background {
+    background-image: url(https://storage.googleapis.com/creator-academy-assets/build-a-sustainable-community/build-a-sustainable-community-450-800.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    /* opacity: 0.5;
+    filter: alpha(opacity=50); */
+    filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
 #sign {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: white;
+    /* background: transparent; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #sign .sign-card {
     background: #fff;
     border-radius: 25px;
     width: 24rem;
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
+    /* opacity: 1; */
+    /* filter: alpha(opacity=1); */
 }
 #sign .sign-card .card-title {
     border-top-left-radius: 25px;
