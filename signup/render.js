@@ -55,7 +55,7 @@ const handleCreateButtonPress = function(event) {
   //postToUser();
   createUser();
     // $message.html('<span class="has-text-success">Success! You have an account now.</span>');
-    location.href = `../privatepage/index.html`;
+    location.href = `../privatepage/`;
 };
 
 const loadIntoDOM = function() {
