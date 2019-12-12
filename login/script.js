@@ -17,7 +17,7 @@ const handleSubmitButtonPress = function(event) {
 
      localStorage.setItem('jwt', result.data.jwt);
      $message.html('<span class="has-text-success">Success! You are now logged in.</span>');
-     location.href = `../index.html`;
+     location.href = `../privatepage/index.html`;
     } catch(error) {
       $message.html('<span class="has-text-danger">Something went wrong. Please check your email and password.</span>');
     }
